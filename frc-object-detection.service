@@ -1,0 +1,15 @@
+[Unit]
+Description=FRC Game Piece Object Detection Service
+After=network.target
+
+[Service]
+Type=simple
+User=photonorin
+WorkingDirectory=/home/photonorin/FRC-Game-Piece-Pos-Estimation/RaspberryPiCode
+ExecStart=/usr/bin/python3 main.py
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
